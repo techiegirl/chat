@@ -1,28 +1,8 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple chat api which allows a user to post message to another user by giving user's email, the message body and the sender's id.
+Example curl request:
 
-Things you may want to cover:
+* curl -v -H "Content-Type:application/json" -X POST http://localhost:3000/api/v1/chat/post_message -d '{"sender_id":"2", "receiver_email":"abc@example.com", "message_body":"This is Example"}'
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+If the user is not found in the system a '500' status error will be returned.
